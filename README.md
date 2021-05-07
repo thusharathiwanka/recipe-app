@@ -43,4 +43,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Complete Live Site URL 🎉
 
-https://netflix-clone-792cd.web.app/
+https://react-recipe-app-edamam-api.netlify.app/
