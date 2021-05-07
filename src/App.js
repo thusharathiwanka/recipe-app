@@ -19,7 +19,7 @@ function App() {
   const getRecipes = async () => {
     setRecipes([]);
     const response = await fetch(
-      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${API_KEY}&from=0&to=12`
+      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${API_KEY}&from=0&to=24`
     );
     const data = await response.json();
     console.log(data);
@@ -50,7 +50,7 @@ function App() {
       />
       <div className="cards-container">
         {recipes.map((recipe) => (
-          <Recipe recipe={recipe} key={recipe.index} />
+          <Recipe recipe={recipe} />
         ))}
       </div>
     </div>

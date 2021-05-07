@@ -21,17 +21,23 @@ code {
 }
 
 .cards-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  width: 1550px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 1rem;
+  row-gap: 2rem;
+  column-gap: 2rem;
 }
 
 .recipe-container {
   width: 290px;
-  height: 400px;
+  min-height: 400px;
   border-radius: 10px;
   background: white;
   margin: 2rem;
+  flex-basis: 290px;
+  flex-shrink: 290px;
   box-shadow: 0px 0px 40px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
 }
@@ -49,8 +55,9 @@ code {
 }
 
 .img-container img {
-  object-fit: fill;
-  width: 290px;
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -62,16 +69,11 @@ code {
 }
 
 .favorite {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   color: crimson;
   margin-top: 0.5rem;
   cursor: pointer;
-  animation: pop-up 0.3s ease-in;
-}
-
-.container {
-  width: 1440px;
-  margin: 0 auto;
+  animation: pop-up 0.3s ease-in-out;
 }
 
 .text-content {
