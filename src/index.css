@@ -17,12 +17,24 @@ code {
     monospace;
 }
 
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .recipe-container {
   width: 280px;
   height: 400px;
   border-radius: 10px;
   background: white;
-  margin: 3rem;
+  margin: 2.5rem;
+  box-shadow: 0px 0px 40px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.recipe-container:hover,
+.recipe-container:focus {
+  transform: scale(1.05);
   box-shadow: 0px 0px 40px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -49,4 +61,28 @@ code {
   font-size: 1.8rem;
   color: crimson;
   margin-top: 0.5rem;
+  cursor: pointer;
+  animation: pop-up 0.3s ease-in;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.text-content h2 {
+  font-size: 1.2rem;
+}
+
+@keyframes pop-up {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }
