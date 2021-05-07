@@ -9,18 +9,22 @@ function App() {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("chicken");
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
     getRecipes();
   }, [query]);
 
   const getRecipes = async () => {
+    setRecipes([]);
     const response = await fetch(
-      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${API_KEY}`
+      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${API_KEY}&from=0&to=12`
     );
     const data = await response.json();
     console.log(data);
     setRecipes(data.hits);
+    setIsLoading(false);
   };
 
   const handleQuery = (e) => {
@@ -34,6 +38,11 @@ function App() {
 
   return (
     <div className="container">
+      {isLoading && (
+        <div className="loading-container">
+          <div className="circle"></div>
+        </div>
+      )}
       <Form
         search={search}
         handleQueryChange={handleQueryChange}
